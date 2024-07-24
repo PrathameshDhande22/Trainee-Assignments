@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mademoiselle</title>
+  <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./fontawesome.js"></script>
+  <script src="./jQuery/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <!-- Navbar button toggle for mobile navigation -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-toggler"
+            aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">
+            <img src="./images/logo.png" alt="Mademoiselle Logo">
+          </a>
+        </div>
+
+        <!-- navbar collapse -->
+        <div class="collapse navbar-collapse" id="navbar-toggler">
+          <ul class="nav navbar-nav navbar-left main-nav center-vertically-navbar">
+            <li><a href="#">SHOP</a></li>
+            <li><a href="#">PRODUCTS</a></li>
+            <li><a href="#">BLOG</a></li>
+            <li><a href="#">BUY NOW!</a></li>
+          </ul>
+          <div class="navbar-right navbar-right-menu display-flex-with-center center-vertically-navbar">
+            <form class="navbar-form navbar-form-fields flex-center-vertically">
+              <!-- Search Box -->
+              <div class="form-group visible-xs">
+                <input type="search" name="search" id="searchbox" placeholder="Searching For Products"
+                  class="form-control">
+              </div>
+              <!-- Search Button -->
+              <button class="fa-solid fa-magnifying-glass btn btn-primary fs-16" id="search-btn"></button>
+              <!-- Card With Badge -->
+              <button class="fa-solid fa-cart-shopping badge-wrapper btn btn-primary fs-16">
+                <span class="badge">23</span>
+              </button>
+            </form>
+            <ul class="navbar-icons nav navbar-nav user-select-none fs-16 navbar-right">
+              <!-- User Profile Drop Down Menu -->
+              <li class="dropdown">
+                <a role="button" class="profile-dropdown-btn dropdown-toggle" data-toggle="dropdown">
+                  <span class="fa-solid fa-circle-user fs-24 user-profile-icon"></span>
+                  <span class="center-vertically-profile-name d-inline-block">
+                    <span>Hi Ameilia</span>
+                    <span class="fa-solid fa-angle-down"></span>
+                  </span>
+                </a>
+                <ul class="dropdown-menu profile-dropdown">
+                  <li>
+                    <a href="#">My Account</a>
+                  </li>
+                  <li>
+                    <a href="#">My Wish List</a>
+                  </li>
+                  <li>
+                    <a href="#">My Orders</a>
+                  </li>
+                  <li>
+                    <a href="#">Sign Out</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main  -->
+  <main>
+    <!-- Product Information -->
+    <div class="container">
+      <!-- BreadCrumb -->
+      <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Cosmetic - Facial</a></li>
+        <li><a href="#">Waterproof Cream Roller</a></li>
+      </ol>
+      <!-- Main content -->
+      <div class="row margin-bottom-xs-16 margin-bottom-sm-14">
+        <!-- Product Image -->
+        <div class="col-md-5 col-xs-12">
+          <div class="border-1">
+            <div class="carousel">
+              <div class="main-image image-center">
+                <img src="./images/product-main.jpg" alt="main product image">
+              </div>
+              <div class="carousel-body">
+                <div class="carousel-images">
+                  <div class="carousel-thumbnail carousel-active">
+                    <img src="./images/thumbnail4.jpg" alt="thumbnail 1">
+                  </div>
+                  <div class="carousel-thumbnail">
+                    <img src="./images/thumbnail2.jpg" alt="thumbnail 2">
+                  </div>
+                  <div class="carousel-thumbnail">
+                    <img src="./images/thumbnail3.jpg" alt="thumbnail 3">
+                  </div>
+                  <div class="carousel-thumbnail">
+                    <img src="./images/thumbnail1.jpg" alt="thumbnail 4">
+                  </div>
+                  <div class="carousel-thumbnail">
+                    <img src="./images/thumbnail5.jpg" alt="thumbnail 5">
+                  </div>
+                  <div class="carousel-thumbnail">
+                    <img src="./images/thumbnail5.jpg" alt="thumbnail 5">
+                  </div>
+                  <div class="carousel-thumbnail">
+                    <img src="./images/thumbnail5.jpg" alt="thumbnail 5">
+                  </div>
+                  <div class="carousel-thumbnail">
+                    <img src="./images/thumbnail5.jpg" alt="thumbnail 5">
+                  </div>
+                </div>
+                <button type="button" class="prev-btn btn btn-default carousel-button" disabled>
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                </button>
+                <button type="button" class="next-btn btn-default btn carousel-button">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Product Details -->
+        <div class="col-md-7 col-xs-12">
+          <section class="product-details margin-bottom-14">
+            <h3 class="product-title">Waterproof Cream Roller</h3>
+            <div class="product-extras">
+              <span class="in-stock">In Stock</span>
+              <span>SKU: 43-natural</span>
+              <!-- Product Rating -->
+              <div class="rating">
+                <div class="stars d-inline-block" data-stars="3" id="rating-stars">
+                  <span class="fa-solid fa-star"></span>
+                  <span class="fa-solid fa-star"></span>
+                  <span class="fa-solid fa-star"></span>
+                  <span class="fa-solid fa-star"></span>
+                  <span class="fa-solid fa-star"></span>
+                </div>
+                <span class="fs-12 product-review">32 reviews</span>
+              </div>
+            </div>
+            <h4 class="product-price">
+              Price : Rs. <span id="price">2,373</span>
+            </h4>
+            <div class="product-body">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Sed ut
+                perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam, eaque
+                ipsa quae ab illo inventore veritatis et quasi architecto
+                beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
+                quia voluptas sit aspernatur aut odit aut fugit, sed quia
+                conse- quuntur magni dolores eos qui ratione voluptatem sequi
+                nesciunt.
+              </p>
+            </div>
+            <strong class="product-selected-option">Colors: Natural</strong>
+            <!-- Product Type Images -->
+            <div class="products-available-options display-flex-with-center gap-10">
+              <div class="product-type-images">
+                <span class="product product-active"></span>
+                <span class="product"></span>
+                <span class="product"></span>
+              </div>
+              <a href="#" class="product-questions link-underline">Ask questions about this product</a>
+            </div>
+            <!-- Product Add to cart and no of carts -->
+            <div class="product-btns display-flex-with-center gap-15">
+              <div class="display-flex-with-center group-input">
+                <span class="group-input-btn">
+                  <button type="button" class="btn btn-default decrement-btn">
+                    <span class="glyphicon glyphicon-minus vertical-middle"></span>
+                  </button>
+                </span>
+                <input type="number" name="quantity" id="quantitybox" class="form-control" value="1"
+                  placeholder="Quantity">
+                <span class="group-input-btn">
+                  <button type="button" class="btn btn-default increment-btn">
+                    <span class="glyphicon glyphicon-plus vertical-middle"></span>
+                  </button>
+                </span>
+              </div>
+              <button type="button" class="btn btn-primary cart-btn">
+                ADD TO CART
+              </button>
+            </div>
+            <a class="product-add-wishlist link-none" href="#">
+              <span class="fa-regular fa-heart fs-18"></span>
+              <span class="link-underline">Add to Wishlist</span>
+            </a>
+          </section>
+        </div>
+      </div>
+
+      <!-- Website Info  -->
+      <div class="row info border-1 margin-bottom-xs-16 margin-bottom-sm-14">
+        <!-- Safe Payment Infobox -->
+        <div class="col-xs-12 col-lg-3 col-sm-6">
+          <div class="info-box flex-center-vertically gap-10">
+            <div class="info-icon img-responsive">
+              <img src="./images/safe-payment.jpg" alt="Safe Payment">
+            </div>
+            <div class="info-body">
+              <h4 class="info-title">Safe Payment</h4>
+              <p class="info-desc">
+                Pay with the world's most payment methods.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Confidence InfoBox -->
+        <div class="col-xs-12 col-lg-3 col-sm-6">
+          <div class="info-box flex-center-vertically gap-10">
+            <div class="info-icon img-responsive">
+              <img src="./images/confidence.jpg" alt="Confidence">
+            </div>
+            <div class="info-body">
+              <h4 class="info-title">Confidence</h4>
+              <p class="info-desc">
+                Protection covers your purchase and personal data.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Delivery infobox -->
+        <div class="col-xs-12 col-lg-3 col-sm-6">
+          <div class="info-box flex-center-vertically gap-10">
+            <div class="info-icon img-responsive">
+              <img src="./images/worldwide-delivery.jpg" alt="Worldwide delivery">
+            </div>
+            <div class="info-body">
+              <h4 class="info-title">Worldwide Delivery</h4>
+              <p class="info-desc">
+                FREE & fast shipping to over 200+ countries & regions.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Hotline infobox -->
+        <div class="col-xs-12 col-lg-3 col-sm-6">
+          <div class="info-box flex-center-vertically gap-10">
+            <div class="info-icon img-responsive">
+              <img src="./images/hotline.jpg" alt="hotline">
+            </div>
+            <div class="info-body">
+              <h4 class="info-title">Hotline</h4>
+              <p class="info-desc">
+                Talk to help line for your question on 1234 123 123, 4567 456
+                123
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Recommended Products section -->
+      <section class="recommended-section">
+        <!-- Recommended header  -->
+        <div class="recommend-header text-center">
+          <h3>Recommended Products</h3>
+          <p class="fs-16">
+            Lorem Ipsum dolor sit amet, consectetur adipiscing elit
+          </p>
+        </div>
+        <!-- products recommended -->
+        <div class="row recommend-products margin-bottom-sm-14 margin-bottom-xs-16">
+          <!-- Product 1 -->
+          <div class="col-xs-12 col-sm-6 col-lg-3">
+            <a class="product-card link-none" href="#">
+              <div class="product-image image-center">
+                <img src="./images/recommended-1.jpg" alt="Product 1">
+              </div>
+              <div class="product-footer text-center">
+                <span class="product-title fs-16">Full Cover Concealer Makeup</span>
+                <h4 class="product-price">Rs. 215.98</h4>
+              </div>
+            </a>
+          </div>
+          <!-- Product 2 -->
+          <div class="col-xs-12 col-sm-6 col-lg-3">
+            <a class="product-card link-none" href="#">
+              <div class="product-image image-center">
+                <img src="./images/recommended-2.jpg" alt="Product 2">
+              </div>
+              <div class="product-footer text-center">
+                <span class="product-title fs-16">Translucent Loose Powder Puff</span>
+                <h4 class="product-price">Rs. 4,766</h4>
+              </div>
+            </a>
+          </div>
+          <!-- Product 3 -->
+          <div class="col-xs-12 col-sm-6 col-lg-3">
+            <a class="product-card link-none" href="#">
+              <div class="product-image image-center">
+                <img src="./images/recommended-3.jpg" alt="Product 3">
+              </div>
+              <div class="product-footer text-center">
+                <span class="product-title fs-16">50G Perfect Cover Cream</span>
+                <h4 class="product-price">Rs. 281.50</h4>
+              </div>
+            </a>
+          </div>
+          <!-- Product 4 -->
+          <div class="col-xs-12 col-sm-6 col-lg-3">
+            <a class="product-card link-none" href="#">
+              <div class="product-image image-center">
+                <img src="./images/recommended-4.jpg" alt="Product 4">
+              </div>
+              <div class="product-footer text-center">
+                <span class="product-title fs-16">2-Color Pressed Powder Blush</span>
+                <h4 class="product-price">Rs. 625.50</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <!-- main footer with some navigation -->
+    <div class="main-footer">
+      <div class="container">
+        <div class="row margin-bottom-xs-16">
+          <!-- Newsletter -->
+          <div class="col-xs-12 col-sm-3 newsletter margin-bottom-8 col-sm-push-9">
+            <h4>Newsletter</h4>
+            <div>Enter your email to receive daily news and get 5% off coupon for
+              all items</div>
+            <div class="input-group">
+              <input type="email" name="email" id="newsletter-email" class="form-control"
+                placeholder="Enter email address">
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-primary text-uppercase">Subscribe</button>
+              </span>
+            </div>
+          </div>
+          <!-- information -->
+          <div class="col-xs-6 col-sm-3 footer-info">
+            <h4>Information</h4>
+            <nav class="footer-nav">
+              <ul>
+                <li>
+                  <a href="#">About Us</a>
+                </li>
+                <li>
+                  <a href="#">Careers</a>
+                </li>
+                <li>
+                  <a href="#">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="#">Terms & Conditions</a>
+                </li>
+                <li>
+                  <a href="#">My Account</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Customer Services -->
+          <div class="col-xs-6 col-sm-3 footer-customer">
+            <h4>Customer Services</h4>
+            <nav class="footer-nav">
+              <ul>
+                <li>
+                  <a href="#">Request Personal Data</a>
+                </li>
+                <li>
+                  <a href="#">FAQs</a>
+                </li>
+                <li>
+                  <a href="#">Contact Us</a>
+                </li>
+                <li>
+                  <a href="#">Orders and Returns</a>
+                </li>
+                <li>
+                  <a href="#">Support Center</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <!-- Footer Logo and Address -->
+          <div class="col-xs-6 col-xs-offset-3 col-sm-offset-0 col-sm-3 col-lg-2 footer-address col-sm-pull-9">
+            <a href="#" class="footer-logo">
+              <img src="./images/logo-footer.png" alt="Mademoiselle footer logo">
+            </a>
+            <address class="padding-y-7 address-icon-color">
+              <div class="location row">
+                <span class="fa-solid fa-location-dot col-xs-1"></span>
+                <span class="col-xs-10">
+                  55 Lorem lpsum dolor 2568 street, 23568 NY
+                </span>
+              </div>
+              <div class="phone row">
+                <span class="fa-solid fa-phone col-xs-1"></span>
+                <a href="tel:+12345565" class="col-xs-10 link-none">(440) 000 000 0000</a>
+              </div>
+              <div class="mail row">
+                <span class="fa-solid fa-envelope col-xs-1"></span>
+                <a href="mailto:sales@loremsite.com" class="col-xs-10 link-none">sales@loremsite.com</a>
+              </div>
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- designer  -->
+    <div class="container">
+      <div class="copyrights clearfix">
+        <div class="rights-reserved pull-left">
+          <span class="copyright">&copy; 2021 Mademoiselle. All Rights Reserved.</span>
+          <span class="designed fs-12">
+            Ecommerce Software by Akstech | Designed by Systenics Solutions
+          </span>
+        </div>
+        <!-- Payments logos -->
+        <div class="payments pull-right">
+          <a href="#" class="logo aramex-logo"> </a>
+          <a href="#" class="logo mastercard-logo"> </a>
+          <a href="#" class="logo paypal-logo"> </a>
+          <a href="#" class="logo visa-logo"> </a>
+        </div>
+      </div>
+    </div>
+
+
+  </footer>
+
+
+  <script src="./bootstrap/js/bootstrap.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>

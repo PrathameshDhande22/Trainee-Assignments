@@ -1,0 +1,12 @@
+<!-- Extras -->
+    <div class="writer">
+      <div class="container text-center">
+        <h5>Code Written by Prathamesh Dhande</h5>
+      </div>
+    </div>
+
+    .writer{
+  background-color: var(--bg-default);
+}
+
+
