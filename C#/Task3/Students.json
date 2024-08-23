@@ -1,0 +1,93 @@
+{
+  "Students": [
+    {
+      "id": 101,
+      "FirstName": "Prathamesh",
+      "LastName": "Dhande",
+      "branch": "Computer",
+      "address": {
+        "Street": "Boisar Tarapur Road",
+        "City": "Boisar",
+        "PiNcode": 401402
+      }
+    },
+    {
+      "Id": 102,
+      "FirstName": "Ravi",
+      "LastName": "Kumar",
+      "Branch": "Electrical",
+      "Address": {
+        "Street": "MG Road",
+        "City": "Pune",
+        "PinCode": 411001
+      }
+    },
+    {
+      "Id": 103,
+      "FirstName": "Anjali",
+      "LastName": "Patil",
+      "Branch": "Mechanical",
+      "Address": {
+        "Street": "Shivaji Park",
+        "City": "Mumbai",
+        "PinCode": 400028
+      }
+    },
+    {
+      "Id": 104,
+      "FirstName": "Suresh",
+      "LastName": "Sharma",
+      "branch": "Civil",
+      "Address": {
+        "Street": "Nehru Nagar",
+        "City": "Nagpur",
+        "PinCode": 440001
+      }
+    },
+    {
+      "Id": 105,
+      "FirstName": "Meera",
+      "LastName": "Singh",
+      "Branch": "Electronics",
+      "Address": {
+        "Street": "Kharadi Bypass",
+        "City": "Pune",
+        "PinCode": 411014
+      }
+    },
+    {
+      "Id": 106,
+      "FirstName": "Vikas",
+      "LastName": "Desai",
+      "Branch": "Information Technology",
+      "Address": {
+        "Street": "Linking Road",
+        "City": "Mumbai",
+        "PinCode": 400050
+      }
+    },
+    {
+      "Id": 107,
+      "FirstName": "Sneha",
+      "LastName": "Jadhav",
+      "Branch": "Chemical",
+      "Address": {
+        "Street": "Raviwar Peth",
+        "City": "Kolhapur",
+        "PinCode": 416002
+      }
+    },
+    {
+      "Id": 108,
+      "FirstName": "Rohit",
+      "LastName": "Kale",
+      "Branch": "Aerospace",
+      "address": {
+        "Street": "Airport Road",
+        "City": "Bangalore",
+        "Pincode": 560017
+      }
+    }
+  ],
+  "NewJoinee": "new"
+}

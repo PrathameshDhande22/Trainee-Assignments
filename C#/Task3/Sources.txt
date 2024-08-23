@@ -1,0 +1,6 @@
+﻿Sources ==>
+
+1. https://stackoverflow.com/questions/972636/casting-a-variable-using-a-type-variable -> To Convert a variable to passed Type.
+2. https://stackoverflow.com/questions/40733792/deserializing-json-response-without-creating-a-class -> Parsing a json file using JsonNode.
+3. https://stackoverflow.com/questions/4661211/c-sharp-instantiate-generic-list-from-reflected-type -> Creating the List Instance using Reflection.
+4. https://stackoverflow.com/questions/71151729/how-to-copy-a-json-value-using-net-6-jsonnode-in-system-text-json-nodes-namespa -> How to read the json file using JsonNode.
