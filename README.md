@@ -1,4 +1,4 @@
-# Systenics Assignments
+# Trainee Assignments
 
 These Repository contains all my assignments done in the training period in **_Systenics Solution_**.
 
@@ -37,4 +37,8 @@ These Repository contains all my assignments done in the training period in **_S
 | 3.    | HTML & CSS  | [Click Here](https://prathameshdhande22.github.io/Systenics-Trainee-Assignments/HTML&CSS/)  | ✅      |
 | 4.    | Bootstrap   | [Click Here](https://prathameshdhande22.github.io/Systenics-Trainee-Assignments/Bootstrap/) | ✅      |
 | 5.    | C#          |                                                                                             | ✅      |
-| 6.    | MS SQL      |                                                                                             | Ongoing |
+| 6.    | MS SQL      |                                                                                             | ✅      |
+| 7.    | Dapper       |                                 | ✅ |
+| 8.    | Entity Framework |                        | ✅ |
+| 9.    | LINQ To SQL    |                            | ✅ |
+| 10.    | ASP.NET MVC    |                                        | ✅ |
