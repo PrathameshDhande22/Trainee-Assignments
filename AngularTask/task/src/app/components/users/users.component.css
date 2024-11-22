@@ -1,0 +1,30 @@
+.checkbox-inline > label,
+.radio-inline > label {
+  font-weight: normal;
+  user-select: none;
+}
+
+.horizontal-line {
+  border-bottom: 2px solid black;
+}
+
+.upload-image-wrapper {
+  margin: 10px 0px;
+}
+.upload-image-wrapper > img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+input:not(input[type="file"]).ng-touched.ng-invalid,
+.input-error,
+textarea.ng-touched.ng-invalid,
+select.ng-touched.ng-invalid {
+  border: 1px solid #a94442;
+}
+
+.form-group > label::after {
+  content: "*";
+  color: red;
+  margin-left: 4px;
+}

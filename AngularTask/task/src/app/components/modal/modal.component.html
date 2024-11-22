@@ -1,0 +1,54 @@
+<!-- Modal -->
+<div *ngIf="open">
+  <div class="modal-backdrop fade in"></div>
+
+  <div
+    class="modal fade in"
+    id="bs-modal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="myModalLabel"
+    style="display: block"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div
+          class="modal-header"
+          [ngClass]="{ 'bg-danger': type === 'Delete' }"
+        >
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+            (click)="onCancel()"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">{{ title }}</h4>
+        </div>
+        <div class="modal-body">
+          <ng-content></ng-content>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-default"
+            data-dismiss="bs-modal"
+            (click)="onCancel()"
+          >
+            Close
+          </button>
+          <button
+            type="button"
+            class="btn"
+            [ngClass]="{ 'btn-danger': type === 'Delete' }"
+            (click)="onConfirm()"
+          >
+            Yes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

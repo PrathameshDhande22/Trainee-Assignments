@@ -1,0 +1,5 @@
+<div *ngIf="control && control.touched && control.invalid">
+  <div *ngFor="let errorKey of errorKeys">
+    <span class="text-danger">{{ getErrorMessage(errorKey) }}</span>
+  </div>
+</div>

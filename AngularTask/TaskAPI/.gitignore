@@ -1,0 +1,6 @@
+packages/
+obj/
+bin/
+.vs/TaskAPI/FileContentIndex
+.vs/
+Content/Images/

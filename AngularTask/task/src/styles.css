@@ -1,0 +1,45 @@
+.container .d-flex-gap-4px {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-direction: row;
+}
+
+.container .d-flex {
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.justify-content-center{
+  justify-content: center;
+}
+
+.d-block {
+  display: block;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.margin-bottom {
+  margin-bottom: 30px;
+}
+
+.image-wrapper > img {
+  max-width: 100px;
+  max-height: 200px;
+}
+
+.font-bold {
+  font-weight: 800;
+}
+
+.d-flex-btn {
+  display: flex;
+  gap: 5px;
+}

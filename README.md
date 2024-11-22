@@ -2,15 +2,6 @@
 
 These Repository contains all my assignments done in the training period in **_Systenics Solution_**.
 
-## Training Completed ON:
-
-1. JavaScript
-2. HTML & CSS
-3. JQuery
-4. Bootstrap 3.4.1
-5. C#
-6. MS SQL - **Ongoing**
-
 ## Assignments Output Images:
 
 1. JavaScript Task Image
@@ -28,6 +19,9 @@ These Repository contains all my assignments done in the training period in **_S
 5. C# Task 2 Image
    ![Csharp Task](./Assets/Task3demo.gif)
 
+6. Angular Task Image
+   ![Angular Image](./Assets/angulartaskimage1.png)
+
 ## Assignments Links
 
 | Sr.No | Assignments | Link                                                                                        | Status  |
@@ -42,3 +36,5 @@ These Repository contains all my assignments done in the training period in **_S
 | 8.    | Entity Framework |                        | ✅ |
 | 9.    | LINQ To SQL    |                            | ✅ |
 | 10.    | ASP.NET MVC    |                                        | ✅ |
+| 11. | Angular | | ✅ |
+| 12. | .NET Web API | | ✅ |

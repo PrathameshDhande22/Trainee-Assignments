@@ -1,0 +1,150 @@
+<div class="margin-bottom">
+  <h3>
+    <span class="glyphicon glyphicon-th-list"></span>
+    User Lists
+  </h3>
+
+  <app-alertbox
+    [Open]="isAlertBoxOpen"
+    [type]="alerttype"
+    (close)="onAlertClose()"
+  >
+    <div>{{ message }}</div>
+  </app-alertbox>
+
+  <div class="margin-top">
+    <table class="table table-bordered table-hover table-responsive">
+      <thead>
+        <tr class="bg-primary">
+          <th>ID</th>
+          <th>Profile Image</th>
+          <!-- contains last name, first name, email, phone no, age, date of birth, gender -->
+          <th>Details</th>
+          <th>Address</th>
+          <th>Interests</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="!isLoading; else rowloader"></tr>
+        <tr class="bg-danger" *ngIf="userlisting.count === 0 && !isLoading">
+          <td class="text-center text-danger font-bold" colspan="6">
+            No Rows Found
+          </td>
+        </tr>
+        <tr *ngFor="let user of userlisting.users">
+          <td>{{ user.Id }}</td>
+          <td>
+            <div class="image-wrapper">
+              <img
+                class="img-thumbnail"
+                [src]="user.Profile"
+                [alt]="user.FirstName + user.LastName + 'image'"
+              />
+            </div>
+          </td>
+          <td>
+            <div>
+              <div>
+                <span class="font-bold">First Name : </span>
+                <span>{{ user.FirstName }}</span>
+              </div>
+              <div>
+                <span class="font-bold">Last Name : </span>
+                <span>{{ user.LastName }}</span>
+              </div>
+              <div>
+                <span class="font-bold">Email : </span>
+                <a [href]="'mailto:' + user.Email">{{ user.Email }}</a>
+              </div>
+              <div>
+                <span class="font-bold">Phone No : </span>
+                <span>{{ user.PhoneNo }}</span>
+              </div>
+              <div>
+                <span class="font-bold">Gender : </span>
+                <span>{{ user.Gender }}</span>
+              </div>
+              <div>
+                <span class="font-bold">Date of Birth : </span>
+                <span>{{ user.FormattedDate }}</span>
+              </div>
+              <div>
+                <span class="font-bold">Age : </span>
+                <span>{{ user.Age }}</span>
+              </div>
+            </div>
+          </td>
+          <td>
+            <div>
+              <span class="font-bold">Address : </span>
+              <span>{{ user.Address }}</span>
+            </div>
+            <div>
+              <span class="font-bold">State : </span>
+              <span>{{ user.State }}</span>
+            </div>
+            <div>
+              <span class="font-bold">City : </span>
+              <span>{{ user.City }}</span>
+            </div>
+          </td>
+          <td>
+            <ol>
+              <li *ngFor="let interest of user.Interests">
+                {{ interest.Interest }}
+              </li>
+            </ol>
+          </td>
+          <td>
+            <div class="d-flex-btn">
+              <button
+                type="button"
+                class="btn btn-primary btn-sm"
+                [routerLink]="'/edit/' + user.Id"
+              >
+                Edit
+                <span class="glyphicon glyphicon-edit"></span>
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger btn-sm"
+                (click)="onDelete(user)"
+              >
+                Delete <span class="glyphicon glyphicon-trash"></span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- template to show the loader in the row -->
+<ng-template #rowloader>
+  <tr>
+    <td colspan="6" class="text-center bg-info">
+      <div class="d-flex-gap-4px justify-content-center">
+        <div>Loading</div>
+        <app-loader [height]="30" [width]="30"></app-loader>
+      </div>
+    </td>
+  </tr>
+</ng-template>
+
+<app-modal
+  title="Confirmation"
+  [type]="'Delete'"
+  [open]="isModalOpen"
+  (cancel)="this.isModalOpen = false"
+  (confirm)="modalConfirm()"
+>
+  <div *ngIf="selectedUser">
+    <p>
+      Are you sure you want to delete The User with <strong>ID :</strong>
+      <span>{{ selectedUser.Id }}</span> and <strong>Name :</strong>
+      <span>{{ selectedUser.FirstName + " " + selectedUser.LastName }}</span>
+    </p>
+  </div>
+</app-modal>

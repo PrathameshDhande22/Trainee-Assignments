@@ -1,0 +1,411 @@
+<div>
+  <!-- logo and title -->
+  <h3>
+    <span class="glyphicon glyphicon-user"></span>
+    {{ !userid ? "Create User" : "Edit User" }}
+  </h3>
+
+  <app-alertbox
+    [Open]="isAlertBoxOpen"
+    [type]="alerttype"
+    (close)="onAlertBoxClose()"
+  >
+    <div>
+      {{ message }}
+    </div>
+  </app-alertbox>
+
+  <div class="d-flex" *ngIf="loadertoshow">
+    <app-loader [height]="120" [width]="120"></app-loader>
+    <div>
+      Wait For
+    </div>
+  </div>
+
+  <!-- form displaying -->
+  <form
+    class="margin-top"
+    [formGroup]="reuserregisterform"
+    (ngSubmit)="submitForm()"
+    *ngIf="!loadertoshow"
+  >
+    <!-- profile image -->
+    <div class="form-group">
+      <label for="profile">Profile Image</label>
+      <input
+        type="file"
+        id="profile"
+        class="form-control"
+        formControlName="ProfileImage"
+        accept=".jpg, .jpeg, .png"
+        (change)="fileUpload()"
+        (cancel)="fileUploadCancel()"
+        #profileimageinputfile
+        (close)="fileUploadCancel()"
+      />
+      <div *ngIf="uploadedimageurl">
+        <span class="font-bold">Uploaded Image Preview : </span>
+        <div class="upload-image-wrapper">
+          <img
+            [src]="uploadedimageurl"
+            alt="Uploaded Image"
+            class="img-thumbnail"
+          />
+          <button
+            class="btn btn-default"
+            (click)="removeUploadedImage()"
+            type="button"
+          >
+            Remove <span class="glyphicon glyphicon-trash"></span>
+          </button>
+        </div>
+      </div>
+      <div *ngIf="edituploadedimageurl && !uploadedimageurl">
+        <span class="font-bold">Preview : </span>
+        <div class="upload-image-wrapper">
+          <img
+            [src]="edituploadedimageurl"
+            [alt]="'edit Image '"
+            class="img-thumbnail"
+          />
+        </div>
+      </div>
+      <div
+        *ngIf="
+          reuserregisterform.controls.ProfileImage.hasError('wrongfileupload')
+        "
+      >
+        <span class="text-danger">The File Uploaded is Not Supported</span>
+      </div>
+      <div
+        class="text-danger"
+        *ngIf="
+          reuserregisterform.controls.ProfileImage.hasError('required') &&
+          reuserregisterform.controls.ProfileImage.touched &&
+          isFileDialogClosed &&
+          !edituploadedimageurl
+        "
+      >
+        The Profile Image Field is required
+      </div>
+      <!-- Render the Error Message over here -->
+    </div>
+
+    <!-- first name input  -->
+    <div class="form-group">
+      <label for="firstname">First Name</label>
+      <input
+        type="text"
+        id="firstname"
+        class="form-control"
+        placeholder="First name"
+        formControlName="FirstName"
+      />
+      <error-message
+        [control]="reuserregisterform.controls.FirstName"
+        [errorMessages]="{
+          required: 'The First Name Field is Required',
+          pattern: 'The First Name Should Contain only Characters'
+        }"
+      >
+      </error-message>
+      <!-- Render the Error Message over here -->
+    </div>
+
+    <!-- last name text box -->
+    <div class="form-group">
+      <label for="lastname">Last Name</label>
+      <input
+        type="text"
+        id="lastname"
+        class="form-control"
+        placeholder="Last Name"
+        formControlName="LastName"
+      />
+      <!-- Render the Error Message over here -->
+      <error-message
+        [control]="reuserregisterform.controls.LastName"
+        [errorMessages]="{
+          required: 'The Last Name Field is Required',
+          pattern: 'The Last Name Should Contain only Characters'
+        }"
+      >
+      </error-message>
+    </div>
+
+    <!-- email address text box -->
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input
+        type="email"
+        id="email"
+        class="form-control"
+        placeholder="Email"
+        formControlName="Email"
+      />
+      <!-- Render the Error Message over here -->
+      <error-message
+        [control]="reuserregisterform.controls.Email"
+        [errorMessages]="{
+          required: 'The Email Field Is Required',
+          email: 'Enter Correct Email Id.'
+        }"
+      >
+      </error-message>
+    </div>
+
+    <!-- password box with eye symbol -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <div class="input-group">
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          formControlName="Password"
+          #passwordinput
+          placeholder="Enter Password"
+        />
+        <div class="input-group-btn">
+          <button
+            class="btn btn-default"
+            (click)="toggleEye(passwordinput)"
+            type="button"
+            id="toggle-password-btn"
+          >
+            <span class="glyphicon glyphicon-eye-open" id="eye-icon"></span>
+          </button>
+        </div>
+      </div>
+      <!-- Render the Error Message over here -->
+      <error-message
+        [control]="reuserregisterform.controls.Password"
+        [errorMessages]="{
+          required: 'The Password Field Is Required',
+          pattern:
+            'The Password Should Contain One Uppercase, One Lowercase, One Number and One Symbol and Should be 8 Characters Long'
+        }"
+      >
+      </error-message>
+    </div>
+
+    <!-- Date of Birth  -->
+    <div class="form-group">
+      <label for="dob">Date Of Birth</label>
+      <input
+        type="date"
+        id="dob"
+        class="form-control"
+        formControlName="DateOfBirth"
+        [max]="maxDate"
+        #dobele
+        (change)="onDobChange(dobele)"
+      />
+      <!-- Render the Error Message over here -->
+      <error-message
+        [control]="reuserregisterform.controls.DateOfBirth"
+        [errorMessages]="{
+          required: 'The Date Of Birth Field Is Required',
+          futureDate: 'The Date of Birth Should Not Contain the Future Date.'
+        }"
+      >
+      </error-message>
+    </div>
+
+    <!-- age text box -->
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input
+        type="number"
+        id="age"
+        class="form-control"
+        formControlName="Age"
+        readonly
+      />
+      <span class="help-block">
+        Age Field will be autocalculated after assigning the Date of Birth
+      </span>
+      <!-- Render the Error Message over here -->
+      <error-message
+        [control]="reuserregisterform.controls.Age"
+        [errorMessages]="{
+          required: 'The Age Field Is Required',
+          WrongAge:
+            'The Entered Age does not match with Date Of Birth, Reset the Date Of Birth again to Calculate the Age'
+        }"
+      >
+      </error-message>
+    </div>
+
+    <!-- Gender Field -->
+    <div class="form-group">
+      <label>Gender</label>
+      <div>
+        <div class="radio-inline">
+          <input
+            type="radio"
+            id="gender-male"
+            formControlName="Gender"
+            value="Male"
+          />
+          <label for="gender-male">Male</label>
+        </div>
+        <div class="radio-inline">
+          <input
+            type="radio"
+            id="gender-female"
+            formControlName="Gender"
+            value="Female"
+          />
+          <label for="gender-female">Female</label>
+        </div>
+        <div class="radio-inline">
+          <input
+            type="radio"
+            id="gender-other"
+            formControlName="Gender"
+            value="Other"
+          />
+          <label for="gender-other">Other</label>
+        </div>
+      </div>
+      <error-message
+        [control]="reuserregisterform.controls.Gender"
+        [errorMessages]="{
+        required: 'The Gender Field Is Required',
+      }"
+      >
+      </error-message>
+    </div>
+
+    <!-- phone no -->
+    <div class="form-group">
+      <label for="phoneno">Phone Number</label>
+      <div class="input-group">
+        <div class="input-group-addon">+91</div>
+        <input
+          type="tel"
+          id="phoneno"
+          class="form-control"
+          placeholder="9909938333"
+          formControlName="PhoneNo"
+          #phonenoinput
+          pattern="^[0-9]{10}$"
+          (keypress)="DontAllowCharacter($event, phonenoinput)"
+        />
+      </div>
+      <!-- Render the Error Message over here -->
+      <error-message
+        [control]="reuserregisterform.controls.PhoneNo"
+        [errorMessages]="{
+          required: 'The Phone Number Field Is Required',
+          pattern:
+            'The Phone Number should not contain any Characters or Spaces and should contain 10 digits only.'
+        }"
+      >
+      </error-message>
+    </div>
+
+    <!-- Address Field -->
+    <div class="form-group">
+      <label for="address">Address</label>
+      <textarea
+        id="address"
+        placeholder="Enter Address Over Here"
+        class="form-control"
+        formControlName="Address"
+      ></textarea>
+      <!-- Render the Error Message over here -->
+      <error-message
+        [control]="reuserregisterform.controls.Address"
+        [errorMessages]="{
+          required: 'The Address Field is Required'
+        }"
+      >
+      </error-message>
+    </div>
+
+    <!-- State Dropdown -->
+    <div class="form-group">
+      <label for="state">State</label>
+      <select
+        id="state"
+        class="form-control"
+        #stateselection
+        (change)="changeCityAccordingtoState(stateselection)"
+        formControlName="State"
+      >
+        <option value="">Select State</option>
+        <option [value]="st" *ngFor="let st of state">{{ st }}</option>
+      </select>
+      <!-- Render the Error Message over here -->
+      <error-message
+        [control]="reuserregisterform.controls.State"
+        [errorMessages]="{ required: 'State Field is required' }"
+      >
+      </error-message>
+    </div>
+
+    <!-- City -->
+    <div class="form-group">
+      <label for="city">City</label>
+      <select id="city" class="form-control" formControlName="City">
+        <option value="" selected>Select City</option>
+        <option [value]="city" *ngFor="let city of cities">{{ city }}</option>
+      </select>
+      <!-- Render the Error Message over here -->
+      <error-message
+        [control]="reuserregisterform.controls.City"
+        [errorMessages]="{
+          required: 'City Field is required'
+        }"
+      ></error-message>
+    </div>
+
+    <!-- Interests Checkbox -->
+    <div class="form-group">
+      <label>Interests</label>
+      <div formArrayName="IdofInterests" *ngIf="interestlist">
+        <div
+          class="checkbox-inline"
+          *ngFor="let interest of interestlist.interests; let i = index"
+        >
+          <input
+            type="checkbox"
+            [id]="interest.InterestId"
+            [formControlName]="i"
+            [value]="interest.InterestId"
+          />
+          <label [htmlFor]="interest.InterestId">{{ interest.Interest }}</label>
+        </div>
+      </div>
+      <!-- Render the Error Message over here -->
+      <error-message
+        [control]="reuserregisterform.controls.IdofInterests"
+        [errorMessages]="{
+          required: 'Select one or More Interests',
+          OneSelected: 'Select One or More Interests'
+        }"
+      ></error-message>
+    </div>
+
+    <div class="d-flex-btn">
+      <button type="submit" class="btn btn-success">
+        <span *ngIf="userid; else submit">Save</span>
+        <ng-template #submit> Submit </ng-template>
+      </button>
+      <button
+        type="button"
+        class="btn btn-default"
+        (click)="!userid ? resetForm() : null"
+        [routerLink]="userid ? '/user' : null"
+      >
+        <span *ngIf="userid; else reset"> Back To List </span>
+        <ng-template #reset> Reset </ng-template>
+      </button>
+    </div>
+  </form>
+
+  <hr class="horizontal-line" />
+  <app-userlisting></app-userlisting>
+</div>

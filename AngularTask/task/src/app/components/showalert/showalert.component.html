@@ -1,0 +1,10 @@
+<app-alertbox
+  [Open]="isAlertBoxOpen"
+  [type]="alerttype"
+  (close)="onAlertBoxClose()"
+>
+  <div>
+    {{ message }}
+  </div>
+</app-alertbox>
+

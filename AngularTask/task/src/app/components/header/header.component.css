@@ -1,0 +1,7 @@
+.nav.navbar-nav > li > a,.navbar-header >.navbar-brand {
+  color: white;
+}
+
+.container-fluid{
+    background-color: #b577cc;
+}
