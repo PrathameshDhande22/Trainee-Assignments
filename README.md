@@ -26,10 +26,10 @@ These Repository contains all my assignments done in the training period in **_S
 
 | Sr.No | Assignments | Link                                                                                        | Status  |
 | ----- | ----------- | ------------------------------------------------------------------------------------------- | ------- |
-| 1.    | JavaScript  | [Click Here](https://prathameshdhande22.github.io/Systenics-Trainee-Assignments/JS/Pages/)  | ✅      |
+| 1.    | JavaScript  | [Click Here](https://prathameshdhande22.github.io/Trainee-Assignments/JS/Pages/)  | ✅      |
 | 2.    | jQuery      | [Click Here](https://prathameshdhande22.github.io/Flip-Card-Memory-Game/)                   | ✅      |
-| 3.    | HTML & CSS  | [Click Here](https://prathameshdhande22.github.io/Systenics-Trainee-Assignments/HTML&CSS/)  | ✅      |
-| 4.    | Bootstrap   | [Click Here](https://prathameshdhande22.github.io/Systenics-Trainee-Assignments/Bootstrap/) | ✅      |
+| 3.    | HTML & CSS  | [Click Here](https://prathameshdhande22.github.io/Trainee-Assignments/HTML&CSS/)  | ✅      |
+| 4.    | Bootstrap   | [Click Here](https://prathameshdhande22.github.io/Trainee-Assignments/Bootstrap/) | ✅      |
 | 5.    | C#          |                                                                                             | ✅      |
 | 6.    | MS SQL      |                                                                                             | ✅      |
 | 7.    | Dapper       |                                 | ✅ |
